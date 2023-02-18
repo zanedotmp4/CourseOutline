@@ -8,3 +8,7 @@ class document(db.Model):
      content = db.Column(db.Integer, db.ForeignKey('Content.id'), nullable=False)
      resources = db.Column(db.Integer, db.ForeignKey('Resources.id'), nullable=False)
      stratigies = db.Column(db.Integer, db.ForeignKey('TeachingStratigies.id'), nullable=False)
+     name  = db.Column(db.String(120),nullable=Flase)
+
+     def __init__(self,name):
+          self.name = name
