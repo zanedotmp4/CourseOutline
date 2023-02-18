@@ -31,7 +31,7 @@ class UserUnitTests(unittest.TestCase):
     def test_toJSON(self):
         user = User("bob", "bobpass","bob@mail.com")
         user_json = user.toJSON()
-        self.assertDictEqual(user_json, {"id":None, "username":"bob","Email":"bob@mail.com"})
+        self.assertDictEqual(user_json, {"id":None, "username":"bob","email":"bob@mail.com"})
     
     def test_hashed_password(self):
         password = "mypass"
@@ -60,7 +60,7 @@ def empty_db():
 
 def test_authenticate():
     user = create_user("bob", "bobpass","bob@mail.com")
-    assert authenticate("bob", "bobpass","bob@mail.com") != None
+    assert authenticate("bob", "bobpass") != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
@@ -70,7 +70,7 @@ class UsersIntegrationTests(unittest.TestCase):
 
     def test_get_all_users_json(self):
         users_json = get_all_users_json()
-        self.assertListEqual([{"id":1, "username":"bob","Email":"bob@mail.com"}, {"id":2, "username":"rick","Email":"bob@mail.com"}], users_json)
+        self.assertListEqual([{"id":1, "username":"bob","Email":"bob@mail.com"}, {"id":2, "username":"rick","email":"bob@mail.com"}], users_json)
 
     # Tests data changes in the database
     def test_update_user(self):
