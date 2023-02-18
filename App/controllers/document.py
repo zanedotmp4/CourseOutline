@@ -1,8 +1,8 @@
 from App.models import document
 from App.database import db
 
-def create_document():
-    newDoc = document()
+def create_document(name):
+    newDoc = document(name=name)
     db.session.add(document)
     db.session.commit()
     return newDoc

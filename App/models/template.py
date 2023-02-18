@@ -1,5 +1,5 @@
 from App.database import db
-from App.models import *
+from App.models import AssigmentTemp,ContentTemp,DescriptionTemp,LearningOutcomesTemp,RationaleTemp,ResourcesTemp,TeachingStratigiesTemp
 class template(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     LearningOutcomes = db.Column(db.Integer, db.ForeignKey('LearningOutcomesTemp.id'), nullable=False)

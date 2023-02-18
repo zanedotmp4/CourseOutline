@@ -1,9 +1,9 @@
 from App.database import db
-from App.models import *
+from App.models import LearningOutcomes,Assigment,Rationale,Content,Resources,TeachingStratigies,Resources,template
 class document(db.Model):
      id = db.Column(db.Integer, primary_key=True)
      LearningOutcomes = db.Column(db.Integer, db.ForeignKey('LearningOutcomes.id'), nullable=False)
-     assigment = db.Column(db.Integer, db.ForeignKey('Assigment.id'), nullable=False)
+     Assigment = db.Column(db.Integer, db.ForeignKey('Assigment.id'), nullable=False)
      rationale = db.Column(db.Integer, db.ForeignKey('Rationale.id'), nullable=False)
      content = db.Column(db.Integer, db.ForeignKey('Content.id'), nullable=False)
      resources = db.Column(db.Integer, db.ForeignKey('Resources.id'), nullable=False)
