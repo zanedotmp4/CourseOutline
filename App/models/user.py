@@ -3,17 +3,22 @@ from App.database import db
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username =  db.Column(db.String, nullable=False)
+    username =  db.Column(db.String(120), nullable=False)
     password = db.Column(db.String(120), nullable=False)
+    email =  db.Column(db.String(120), nullable=False)
+    userType = db.Column(db.String,default=False)
 
-    def __init__(self, username, password):
+    def __init__(self, username, password,email):
         self.username = username
+        self.email = email
         self.set_password(password)
-
+    def setUserType(self,userType):
+        self.userType = userType
     def toJSON(self):
         return{
             'id': self.id,
-            'username': self.username
+            'username': self.username,
+            'email':self.email,
         }
 
     def set_password(self, password):
