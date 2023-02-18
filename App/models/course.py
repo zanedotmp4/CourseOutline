@@ -18,11 +18,11 @@ class update(db.Model):
         self.prerequities = prerequities
     def to_JSON(self):
         return{
-            'id':self.id
-            'name':self.name
-            'prerequities':self.prerequities
-            'courseType':self.courseType
-            'level':self.level
-            'credits':self.credits
+            'id':self.id,
+            'name':self.name,
+            'prerequities':self.prerequities,
+            'courseType':self.courseType,
+            'level':self.level,
+            'credits':self.credits,
             'faculty':self.faculty
         }
