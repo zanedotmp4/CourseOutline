@@ -6,7 +6,7 @@ class User(db.Model):
     username =  db.Column(db.String(120), nullable=False)
     password = db.Column(db.String(120), nullable=False)
     email =  db.Column(db.String(120), nullable=False)
-    userType = db.Column(db.Boolean,default)
+    userType = db.Column(db.Boolean,default=False)
 
     def __init__(self, username, password):
         self.username = username
