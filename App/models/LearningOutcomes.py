@@ -1,4 +1,5 @@
 from App.database import db
+from App.models import document,template,Assigment
 class LearningOutcomes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     docId = db.Column(db.Integer, db.ForeignKey('document.id'), nullable=False)

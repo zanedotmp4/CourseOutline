@@ -1,9 +1,9 @@
 from App.database import db
-from App.models import user
+from App.models import user,template
 
 class CELTMember(db.Model):
     userID = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
-    document = db.Column(db.Integer, db.ForeignKey('tempalte.id'), nullable=False)
+    document = db.Column(db.Integer, db.ForeignKey('template.id'), nullable=False)
 
 
     def toJSON(self):
