@@ -12,14 +12,16 @@ class User(db.Model):
         self.username = username
         self.email = email
         self.set_password(password)
-    def setUserType(self,userType):
-        self.userType = userType
+
     def toJSON(self):
         return{
             'id': self.id,
             'username': self.username,
             'email':self.email,
         }
+    def setType(self,type):
+        userType = type
+        
 
     def set_password(self, password):
         """Create hashed password."""
