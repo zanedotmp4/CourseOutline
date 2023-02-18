@@ -9,5 +9,6 @@ class template(db.Model):
     resources = db.Column(db.Integer, db.ForeignKey('ResourcesTemp.id'), nullable=False)
     stratigies = db.Column(db.Integer, db.ForeignKey('TeachingStratigiesTemp.id'), nullable=False)
     name  = db.Column(db.String(120),nullable=False)
+    
     def __init__(self,text):
         self.text = text
