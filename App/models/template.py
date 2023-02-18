@@ -3,7 +3,7 @@ from App.models import AssigmentTemp,ContentTemp,DescriptionTemp,LearningOutcome
 class template(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     LearningOutcomes = db.Column(db.Integer, db.ForeignKey('LearningOutcomesTemp.id'), nullable=False)
-    Assigment = db.Column(db.Integer, db.ForeignKey('AssigmentTemp.id'), nullable=False)
+    assigment = db.Column(db.Integer, db.ForeignKey('AssigmentTemp.id'), nullable=False)
     rationale = db.Column(db.Integer, db.ForeignKey('RationaleTemp.id'), nullable=False)
     content = db.Column(db.Integer, db.ForeignKey('ContentTemp.id'), nullable=False)
     resources = db.Column(db.Integer, db.ForeignKey('ResourcesTemp.id'), nullable=False)
