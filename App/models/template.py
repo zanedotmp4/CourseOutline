@@ -1,5 +1,5 @@
 from App.database import db
-from App.models import AssigmentTemp,ContentTemp,DescriptionTemp,LearningOutcomesTemp,RationaleTemp,ResourcesTemp,TeachingStratigiesTemp
+from App.models import AssigmentTemp,ContentTemp,DescriptionTemp,LearningOutcomesTemp,RationaleTemp,ResourcesTemp,TeachingStratigiesTemp,CalanderTemp
 class template(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     LearningOutcomes = db.Column(db.Integer, db.ForeignKey('LearningOutcomesTemp.id'), nullable=False)
@@ -8,6 +8,7 @@ class template(db.Model):
     content = db.Column(db.Integer, db.ForeignKey('ContentTemp.id'), nullable=False)
     resources = db.Column(db.Integer, db.ForeignKey('ResourcesTemp.id'), nullable=False)
     stratigies = db.Column(db.Integer, db.ForeignKey('TeachingStratigiesTemp.id'), nullable=False)
+    calander = db.Column(db.Integer, db.ForeignKey('CalanderTemp.id'), nullable=False)
     name  = db.Column(db.String(120),nullable=False)
     
     def __init__(self,text):
