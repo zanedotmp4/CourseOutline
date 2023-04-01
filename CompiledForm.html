@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CETL COURSE OUTLINE FORM</title>
+	<link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".hamburger").click(function(){
+			   $(".wrapper").toggleClass("collapse");
+			});
+		});
+
+	</script>
+    <style>
+            table, th, td {
+     border: 1px solid darkblue;
+     }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="top_navbar">
+    <div class="hamburger">
+       <div class="one"></div>
+       <div class="two"></div>
+       <div class="three"></div>
+    </div>
+    <div class="top_menu">
+      <div class="logo">University Course Outline Generator</div>
+      <ul>
+        <li><a href="#">
+          <i class="fas fa-search"></i></a></li>
+        <li><a href="#">
+          <i class="fas fa-bell"></i>
+          </a></li>
+        <li><a href="#">
+          <i class="fas fa-user"></i>
+          </a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar">
+      <ul>
+        <li class="activate"><a href="#">
+  
+          <span class="title">Initial Course Details</span></a></li>
+        <li><a href="#">
+          
+          <span class="title">Course Credit Details</span>
+          </a></li>
+        <li><a href="#">
+          
+          <span class="title">About The Course</span>
+          </a></li>
+        <li><a href="#">
+          
+          <span class="title">Learning Outcomes</span>
+          </a></li>
+        <li><a href="#">
+          
+          <span class="title">Contact Hours</span>
+          </a></li>
+        <li><a href="#">
+          
+          <span class="title">Assessment Details</span>
+          </a></li>
+        <li><a href="#">
+          
+          <span class="title">Course Details 6</span>
+          </a></li>
+    </ul>
+  </div>
+  
+  <div class="main_container">
+
+    
+
+ <!-- PAGE 1 --> 
+  <div class="page" id="page1">
+    <h2>Initial Course Details</h2>
+                        <p>Please entire the initial details required for your course</p>
+         <br>
+         <form id="myForm1" method="post">
+                <label for="pre" style="font-weight: bold;">Pre-requisites:</label>
+                  <br>
+                <input type="text" id="Pre-Requisites" name="Pre-Requisites" placeholder="Enter All Pre-requisites or State ‘None’" style="width: 300px;"><br>
+                 <br>
+
+            <label for="co" style="font-weight: bold;">Co-requisites:</label>
+                  <br>
+                <input type="text" id="Co-requisites" name="Co-requisites" placeholder="Enter ALL Co-requisites or State ‘None’" style="width: 300px;"><br>
+                 <br>
+
+           <label for="anti" style="font-weight: bold;">Anti-requisites:</label>
+                  <br>
+                <input type="text" id="Anti-requisites" name="Anti-requisites" placeholder="Enter ALL Anti-requisites or State ‘None’" style="width: 300px;"><br>
+                 <br>
+                <p style="font-weight: bold;">Select Course Type (Core, Elective, or Co-Curricular) </p>
+  <input type="radio" id="core" name="coursetype" value="Core Course">
+  <label for="core">Core Course</label><br>
+  <input type="radio" id="elective" name="coursetype" value="Elective Course">
+  <label for="elective">Elective Course</label><br>
+  <input type="radio" id="cc" name="coursetype" value="Co-curricular Course">
+  <label for="cc">Co-curricular Course</label>
+           <br> 
+             <br>   
+             
+             <button type="button" class="next">Next</button>
+    
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page" id="page2">
+
+    <h2>Course Credit Details</h2>
+                        <p>Please enter the corresponding credits at each academic level for your intended course: </p>
+    
+
+                   
+    <br>
+
+    <label for="co" style="font-weight: bold;">Full Time Year 1 Student: </label>
+        <select name="Credits" id="cars">
+        <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+        </select><br>
+   <br>
+
+    <label for="co" style="font-weight: bold;">Full Time Year 2 Student: </label>
+        <select name="Credits" id="cars">
+        <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+        </select><br>
+
+   <br>
+
+   <label for="co" style="font-weight: bold;">Full Time Year 3 Student: </label>
+        <select name="Credits" id="cars">
+        <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+        </select><br>
+
+   <br>
+
+   <label for="co" style="font-weight: bold;">Full Time Student (Other Years): </label>
+        <select name="Credits" id="cars">
+        <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+        </select><br>
+
+   <br>
+
+   <label for="co" style="font-weight: bold;">Part Time Year 1 Student: </label>
+        <select name="Credits" id="cars">
+        <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+        </select><br>
+   <br>
+
+    <label for="co" style="font-weight: bold;">Part Time Year 2 Student: </label>
+        <select name="Credits" id="cars">
+        <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+        </select><br>
+
+   <br>
+
+   <label for="co" style="font-weight: bold;">Part Time Year 3 Student: </label>
+        <select name="Credits" id="cars">
+        <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+        </select><br>
+
+   <br>
+
+   <label for="co" style="font-weight: bold;">Part Time Student (Other Years): </label>
+        <select name="Credits" id="cars">
+        <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+        </select><br>
+
+   <br>
+
+   <button type="button" class="prev">Previous</button>
+   <br> 
+   <button type="button" class="next">Next</button>
+  
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <h2>About the course</h2>
+    <p>This section requires you to fill out details about the content of the course</p>
+    <br>
+
+    <p style="font-weight: bold;">Mode of Delivery:   </p>
+      <input type="radio" id="ftf" name="Mode of Delivery" value="Face-to-Face">
+      <label for="ftf">Face-to-Face</label><br>
+      <input type="radio" id="Blended" name="Mode of Delivery" value="Blended">
+      <label for="Blended">Blended</label><br>
+      <input type="radio" id="online" name="Mode of Delivery" value="Online">
+      <label for="cc">Online</label>
+          <br> 
+          <br>
+          
+          <p style="font-weight: bold;"><label for="cd">1.) Course Description:</label></p>
+      <textarea id="course_desc" name="Course Description" rows="6" cols="50" placeholder="Provide a brief description of the offering of this course, such as:  “This course introduces students to...It covers...It will be assessed using..."></textarea>
+      <br>
+          <br> 
+        
+          <p style="font-weight: bold;"><label for="cr">2.) Course Rationale:</label></p>
+      <textarea id="course_r" name="Course Rationale" rows="6" cols="50" placeholder="Provide a brief statement highlighting the dominant reasons for the offering of this course.  You should justify its addition and clearly state how it integrates into the overall degree programme."></textarea>
+      <br>
+      <br> 
+           <p style="font-weight: bold;"><label for="cg">3.) Course Aims/Goals:</label></p>
+      <textarea id="course_g" name="Course Aims/Goals" rows="6" cols="50" placeholder="Enter the course aim/goal in a short paragraph. For example, “The primary aim/goal of the course is to….”"></textarea>
+      <br>
+             
+                 <br>  
+                 <button type="button" class="prev">Previous</button>
+                 <br> 
+                 <button type="button" class="next">Next</button>
+                
+    
+   
+  </div>
+    
+  <!--PAGE 4-->
+  <div class="page" id="page4">
+    <h2>Learning Outcomes</h2>
+            
+    <br>
+
+    <p style="font-weight: bold;"><label for="cd">1.) Course Learning Outcomes:</label></p>
+           <p>Enter 5 to 8 Learning outcomes as per UWI guidelines:</p>
+           <br>
+           <p style="font-style:italic;">Learning Outcome 1:</p>
+              
+  <input style="width:350px;" type="text" name="input[]" placeholder="Learning Outcome">
+<br>
+<br>
+           <p style="font-style:italic;">Learning Outcome 2:</p>
+              
+  <input style="width:350px;" type="text" name="input[]" placeholder="Learning Outcome">
+<br>
+<br>
+           <p style="font-style:italic;">Learning Outcome 3:</p>
+              
+  <input style="width:350px;" type="text" name="input[]" placeholder="Learning Outcome">
+<br>
+<br>
+           <p style="font-style:italic;">Learning Outcome 4:</p>
+              
+  <input style="width:350px;" type="text" name="input[]" placeholder="Learning Outcome">
+<br>
+<br>
+
+           <p style="font-style:italic;">Learning Outcome 5:</p>
+              
+  <input style="width:350px;" type="text" name="input[]" placeholder="Learning Outcome">
+<br>
+              <br>
+           <p>Additional Learning Outcomes: </p>
+            <button onclick="addInput()">Click to Add more learning outcomes</button>
+           
+                  <div id="input-container">
+
+                  </div>
+                  <br>
+           <br> 
+                  <p style="font-weight: bold;"><label for="cr">2.) Course Content:</label></p>
+              <textarea id="course_r" name="course_r" rows="6" cols="50" placeholder="Describe units, topics, concepts that will be addressed:"></textarea>
+              <br>
+              <br> 
+                <br>
+                   <p style="font-weight: bold;"><label for="cg">3.) Teaching Methods:</label></p>
+              <textarea id="course_g" name="course_g" rows="6" cols="50" placeholder="Specify the combination of lectures, tutorials, labs, workshops or other types of interaction as appropriate. N.B. All types of interaction must be included."></textarea>
+              <br>
+
+   
+    <button type="button" class="prev">Previous</button>
+    <button type="button" class="next">Next</button>
+  </div>
+
+    <div class="page" id="page5">
+        <h2>Contact Hours</h2>
+        <p>This section requires you to fill out the contact hours required for your course. Please fill out using numerical values only.</p>
+     <br>
+     <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Duration(Weeks)</th>
+            <th>Contact Hours</th>
+            <th>Credit Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p style="font-style:italic">Lectures</p></td>
+            <td><input type="text" placeholder="duration" name="row1col3"></td>
+            <td><input type="text" placeholder="contact hours" name="row1col3"></td>
+            <td><input type="text" placeholder="credit hours" name="row1col4"></td>
+          </tr>
+          <tr>
+            <td><p style="font-style:italic">Tutorials</p></td>
+            <td><input type="text" placeholder="duration" name="row2col2"></td>
+            <td><input type="text" placeholder="contact hours" name="row2col3"></td>
+            <td><input type="text" placeholder="credit hours" name="row2col4"></td>
+          </tr>
+          <tr>
+            <td><p style="font-style:italic">Labs</p></td>
+            <td><input type="text" placeholder="duration" name="row3col2"></td>
+            <td><input type="text" placeholder="contact hours" name="row3col3"></td>
+            <td><input type="text" placeholder="credit hours" name="row3col4"></td>
+          </tr>
+          <tr>
+            <td><p style="font-style:italic">Other</p></td>
+            <td><input type="text" placeholder="duration" name="row4col2"></td>
+            <td><input type="text" placeholder="contact hours"name="row4col3"></td>
+            <td><input type="text" placeholder="credit hours" name="row4col4"></td>
+          </tr>
+          <tr>
+            <td><p style="font-weight:bold;">Totals</p></td>
+            <td><input type="text" placeholder=" Total duration" name="row5col2"></td>
+            <td><input type="text" placeholder="Total hours" name="row5col3"></td>
+            <td><input type="text" placeholder="total hours" name="row5col4"></td>
+          </tr>
+        </tbody>
+      </table>
+        <br>
+
+
+
+    <button type="button" class="prev">Previous</button>
+    <button type="button" class="next">Next</button>  
+    </div>
+
+    <div class-="page" id="page6">
+
+    </div>
+
+ </form>
+
+    
+
+    <div class="element-body">
+      <h3 style="font-weight: bold; text-align: center;">Element Viewer</h3>
+      <br>
+      <p>Click on any element to view its details:</p>
+      <br>
+      <div id="element-details"></div>
+      <div id="element-list">
+         <ul>
+          <li><a href="https://www.w3schools.com">Initial Course Details</a></li><br>
+          <li><a href="https://www.w3schools.com">Course Credit Details</a></li><br>
+          <li><a href="https://www.w3schools.com">About Course Details</a></li><br>
+          <li><a href="https://www.w3schools.com">Course Learning Outcomes</a></li><br>
+          <li><a href="https://www.w3schools.com">Contact Hours</a></li><br>
+          <li><a href="https://www.w3schools.com">Assessment Section</a></li><br>
+         </ul>
+      </div>
+   </div>
+
+        
+        
+        
+
+        </div>
+
+
+    
+    </div>
+   
+
+  </div>
+
+  <script>
+
+var current_page = 1;
+var pages = document.querySelectorAll('.page');
+var next = document.querySelectorAll('.next');
+var prev = document.querySelectorAll('.prev');
+
+function showPage(page_num) {
+  for (var i = 0; i < pages.length; i++) {
+    if (i == page_num - 1) {
+      pages[i].style.display = "block";
+    } else {
+      pages[i].style.display = "none";
+    }
+  }
+}
+
+for (var i = 0; i < next.length; i++) {
+  next[i].addEventListener('click', function() {
+    if (current_page < pages.length) {
+      current_page++;
+      showPage(current_page);
+    }
+  });
+}
+
+for (var i = 0; i < prev.length; i++) {
+  prev[i].addEventListener('click', function() {
+    if (current_page > 1) {
+      current_page--;
+      showPage(current_page);
+    }
+  });
+}
+
+showPage(current_page);
+
+function addInput() {
+  var container = document.getElementById("input-container");
+  var input = document.createElement("input");
+  input.type = "text";
+  input.name = "input[]";
+  input.placeholder = "Addtional Learning Outcome";
+  input.style="width:350px;"
+  container.appendChild(input);
+}
+
+function submitForm() {
+  const form = document.getElementById('myForm1');
+  const formData = new FormData(form);
+  const data = {};
+  formData.forEach((value, key) => data[key] = value);
+  const jsonData = JSON.stringify(data);
+  console.log(jsonData)
+  window.location.href = "coursecreditdetails.html";
+  return jsonData; 
+}
+
+ </script>
+	
+</body>
+</html>
