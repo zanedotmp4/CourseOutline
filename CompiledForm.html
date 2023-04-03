@@ -88,8 +88,26 @@
                         <p>Please entire the initial details required for your course</p>
          <br>
          <form id="myForm1" method="post">
-                <label for="pre" style="font-weight: bold;">Pre-requisites:</label>
+
+
+            <label style="font-weight: bold;">Campus and Faculty: </label>
+            <br>
+        <input type="text" id="cAndF" name="campusAndFaculty"  style="width: 300px;"><br>
+              <br>
+                    <label style="font-weight: bold;">School, Department or Centre: </label>
+                    <br>
+                <input type="text" id="cAndF" name="schoolDepartmentCentre"  style="width: 300px;"><br>
+               <br>
+                <label style="font-weight: bold;">Course Code and Title: </label>
+                <br>
+            <input type="text" id="cAndF" name="courseCodeAndTitle"  style="width: 300px;"><br>
+       <br>
+            <label style="font-weight: bold;">Semester and Level: </label>
+            <br>
+        <input type="text" id="cAndF" name="semesterAndLevel"  style="width: 300px;"><br>
                   <br>
+                        <label for="pre" style="font-weight: bold;">Pre-requisites:</label>
+                        <br>
                 <input type="text" id="Pre-Requisites" name="Pre-Requisites" placeholder="Enter All Pre-requisites or State ‘None’" style="width: 300px;"><br>
                  <br>
 
@@ -242,7 +260,10 @@
       <label for="cc">Online</label>
           <br> 
           <br>
-          
+          <p style="font-weight: bold;"><label for="psp">Proposed Start Date:</label></p>
+        <input type="date" name="proposedStartDate">
+          <br>
+          <br> 
           <p style="font-weight: bold;"><label for="cd">1.) Course Description:</label></p>
       <textarea id="course_desc" name="Course Description" rows="6" cols="50" placeholder="Provide a brief description of the offering of this course, such as:  “This course introduces students to...It covers...It will be assessed using..."></textarea>
       <br>
@@ -401,6 +422,7 @@
       <th>Learning Outcomes</th>
       <th>Assessment Weight</th>
       <th>Assessment Description</th>
+      <th>Duration</th>
     </tr>
   </thead>
   <tbody>
@@ -411,6 +433,7 @@
       <td><input name="asLearningOutcomes1" type="text"></td>
       <td><input name="asWeight1" type="text"></td>
       <td><input name="asDesc1" type="text"></td>
+      <td><input name="asDuration1" type="text"></td>
     </tr>
     <tr>
       <td>2</td>
@@ -418,6 +441,7 @@
       <td><input name="asLearningOutcomes2" type="text"></td>
       <td><input name="asWeight2" type="text"></td>
       <td><input name="asDesc2" type="text"></td>
+      <td><input name="asDuration2" type="text"></td>
     </tr>
     <tr>
       <td>3</td>
@@ -425,6 +449,7 @@
       <td><input name="asLearningOutcomes3" type="text"></td>
       <td><input name="asWeight3" type="text"></td>
       <td><input name="asDesc3" type="text"></td>
+      <td><input name="asDuration3" type="text"></td>
     </tr>
     <tr>
       <td>4</td>
@@ -432,6 +457,7 @@
       <td><input name="asLearningOutcomes4" type="text"></td>
       <td><input name="asWeight4" type="text"></td>
       <td><input name="asDesc4" type="text"></td>
+      <td><input name="asDuration4" type="text"></td>
     </tr>
     <tr>
       <td>5</td>
@@ -439,6 +465,7 @@
       <td><input name="asLearningOutcomes5" type="text"></td>
       <td><input name="asWeight5" type="text"></td>
       <td><input name="asDesc5" type="text"></td>
+      <td><input name="asDuration5" type="text"></td>
     </tr>
     <tr>
       <td>6</td>
@@ -446,6 +473,7 @@
       <td><input name="asLearningOutcomes6" type="text"></td>
       <td><input name="asWeight6" type="text"></td>
       <td><input name="asDesc6" type="text"></td>
+      <td><input name="asDuration6" type="text"></td>
     </tr>
     <tr>
       <td>7</td>
@@ -453,6 +481,7 @@
       <td><input name="asLearningOutcomes7" type="text"></td>
       <td><input name="asWeight7" type="text"></td>
       <td><input name="asDesc7" type="text"></td>
+      <td><input name="asDuration7" type="text"></td>
     </tr>
     <tr>
       <td>8</td>
@@ -460,6 +489,7 @@
       <td><input name="asLearningOutcomes8" type="text"></td>
       <td><input name="asWeight8" type="text"></td>
       <td><input name="asDesc8" type="text"></td>
+      <td><input name="asDuration8" type="text"></td>
     </tr>
     <tr>
       <td>9</td>
@@ -467,6 +497,7 @@
       <td><input name="asLearningOutcomes9" type="text"></td>
       <td><input name="asWeight9" type="text"></td>
       <td><input name="asDesc9" type="text"></td>
+      <td><input name="asDuration9" type="text"></td>
     </tr>
     <tr>
       <td>10</td>
@@ -474,6 +505,7 @@
       <td><input name="asLearningOutcomes10" type="text"></td>
       <td><input name="asWeight10" type="text"></td>
       <td><input name="asDesc10" type="text"></td>
+      <td><input name="asDuration10" type="text"></td>
     </tr>
   </tbody>
 </table>
@@ -490,86 +522,132 @@
         <table>
             <thead>
               <tr>
-                <th>Assessment</th>
-                <th>Weighting</th>
-                <th>Release Date (Planned)</th>
-                <th>Due Date (Planned)</th>
-                <th>Content Assessed</th>
+                <th>Week</th>
+                <th>Topic</th>
+                <th>Required Reading/Learning Resources</th>
+                <th>Learning Activities</th>
+                <th>Assignments</th>
+                <th>Due Date</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><input type="text" name="assignment1" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment1Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg1ReleaseDate"></td>
-                <td><input type="date" name="asg1DueDate"></td>
-                <td><input type="text" name="asg1WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>1</td>
+                <td><input type="text" name="Topic1" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources1" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities1" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments1" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate1" placeholder="Due Date"></td>
               </tr>
               <tr>
-                <td><input type="text" name="assignment2" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment2Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg2ReleaseDate"></td>
-                <td><input type="date" name="asg2DueDate"></td>
-                <td><input type="text" name="asg2WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>2</td>
+                <td><input type="text" name="Topic2" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources2" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities2" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments2" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate2" placeholder="Due Date"></td>
               </tr>
               <tr>
-                <td><input type="text" name="assignment3" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment3Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg3ReleaseDate"></td>
-                <td><input type="date" name="asg3DueDate"></td>
-                <td><input type="text" name="asg3WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>3</td>
+                <td><input type="text" name="Topic3" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources3" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities3" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments3" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate3" placeholder="Due Date"></td>
               </tr>
               <tr>
-                <td><input type="text" name="assignment4" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment4Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg4ReleaseDate"></td>
-                <td><input type="date" name="asg4DueDate"></td>
-                <td><input type="text" name="asg4WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>4</td>
+                <td><input type="text" name="Topic4" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources4" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities4" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments4" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate4" placeholder="Due Date"></td>
               </tr>
               <tr>
-                <td><input type="text" name="assignment5" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment5Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg5ReleaseDate"></td>
-                <td><input type="date" name="asg5DueDate"></td>
-                <td><input type="text" name="asg5WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>5</td>
+                <td><input type="text" name="Topic5" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources5" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities5" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments5" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate5" placeholder="Due Date"></td>
               </tr>
               <tr>
-                <td><input type="text" name="assignment6" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment6Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg6ReleaseDate"></td>
-                <td><input type="date" name="asg6DueDate"></td>
-                <td><input type="text" name="asg6WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>6</td>
+                <td><input type="text" name="Topic6" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources6" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities6" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments6" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate6" placeholder="Due Date"></td>
               </tr>
               <tr>
-                <td><input type="text" name="assignment7" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment7Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg7ReleaseDate"></td>
-                <td><input type="date" name="asg7DueDate"></td>
-                <td><input type="text" name="asg7WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>7</td>
+                <td><input type="text" name="Topic7" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources7" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities7" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments7" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate7" placeholder="Due Date"></td>
               </tr>
               <tr>
-                <td><input type="text" name="assignment8" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment8Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg8ReleaseDate"></td>
-                <td><input type="date" name="asg8DueDate"></td>
-                <td><input type="text" name="asg8WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>8</td>
+                <td><input type="text" name="Topic8" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources8" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities8" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments8" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate8" placeholder="Due Date"></td>
               </tr>
               <tr>
-                <td><input type="text" name="assignment9" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment9Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg9ReleaseDate"></td>
-                <td><input type="date" name="asg9DueDate"></td>
-                <td><input type="text" name="asg9WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>9</td>
+                <td><input type="text" name="Topic9" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources9" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities9" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments9" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate9" placeholder="Due Date"></td>
               </tr>
               <tr>
-                <td><input type="text" name="assignment10" placeholder="Assessment"></td>
-                <td><input type="text" name="assignment10Weight" placeholder="Weighting"></td>
-                <td><input type="date" name="asg10ReleaseDate"></td>
-                <td><input type="date" name="asg10DueDate"></td>
-                <td><input type="text" name="asg10WeeksAssessed" placeholder="Weeks Assessed"></td>
+                <td>10</td>
+                <td><input type="text" name="Topic10" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources10" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities10" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments10" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate10" placeholder="Due Date"></td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td><input type="text" name="Topic11" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources11" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities11" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments11" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate11" placeholder="Due Date"></td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td><input type="text" name="Topic12" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources12" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities12" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments12" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate12" placeholder="Due Date"></td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td><input type="text" name="Topic13" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources13" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities13" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments13" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate13" placeholder="Due Date"></td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td><input type="text" name="Topic14" placeholder="Topic"></td>
+                <td><input type="text" name="RequiredReadingLearningResources14" placeholder="Required Reading/Learning Resources"></td>
+                <td><input type="text" name="LearningActivities14" placeholder="Learning Activities"></td>
+                <td><input type="text" name="Assignments14" placeholder="Assignments"></td>
+                <td><input type="date" name="DueDate14" placeholder="Due Date"></td>
               </tr>
             </tbody>
-        </table>
+          </table>
+          
+          
+          
         <br>
         <button type="button" class="prev">Previous</button>
         <button type="button" class="next">Next</button>
@@ -624,6 +702,10 @@
 
            <p style="font-weight: bold;"><label for="other">Other:(Special Equipment or Tools)</label></p>
            <textarea id="other" name="otherResources" rows="6" cols="60" autofocus placeholder="Enter other resources (Special Equipment or Tools)"></textarea>
+           <br>
+
+           <p style="font-weight: bold;"><label for="staff">Staffing Requirements:</label></p>
+           <textarea id="staff" name="staffingRequirements" rows="6" cols="60" autofocus placeholder="Enter staffing requirements"></textarea>
            <br>
            <button type="button" class="prev">Previous</button>
           <button type="button" class="next">Next</button>
@@ -711,7 +793,7 @@ function addInput() {
   container.appendChild(input);
 }
 
-function submitForm() {
+/*function submitForm() {
   const form = document.getElementById('myForm1');
   const formData = new FormData(form);
   const data = {};
@@ -722,6 +804,68 @@ function submitForm() {
   return jsonData; 
 }
 
+function submitForm() {
+  // Loop through each div containing input fields
+  var divs = document.querySelectorAll("div[id^='page']");
+  var jsonData = {};
+  for (var i = 0; i < divs.length; i++) {
+    // Create a JSON object for each div
+    var divData = {};
+    var inputs = divs[i].querySelectorAll(":input");
+    for (var j = 0; j < inputs.length; j++) {
+      divData[inputs[j].name] = inputs[j].value;
+    }
+    jsonData["page" + (i + 1)] = divData;
+  }
+  // Combine all the JSON objects into one large JSON object
+  var combinedJsonData = JSON.stringify(jsonData);
+  // Send the JSON data to your server or do something else with it
+  console.log(combinedJsonData);
+}
+
+
+function submitForm() {
+  // Loop through each div containing input fields
+  var divs = document.querySelectorAll("div[id^='page']");
+  var jsonData = {};
+  for (var i = 0; i < divs.length; i++) {
+    // Create a JSON object for each div
+    var divData = {};
+    var inputs = divs[i].querySelectorAll("[name]");
+    for (var j = 0; j < inputs.length; j++) {
+      divData[inputs[j].name] = inputs[j].value;
+    }
+    jsonData["page" + (i + 1)] = divData;
+  }
+  // Combine all the JSON objects into one large JSON object
+  var combinedJsonData = JSON.stringify(jsonData);
+  // Send the JSON data to your server or do something else with it
+  console.log(combinedJsonData);
+}
+*/
+
+function submitForm() {
+  // Loop through each div containing input fields
+  var divs = document.querySelectorAll("div[id^='page']");
+  var jsonData = {};
+  for (var i = 0; i < divs.length; i++) {
+    // Create a JSON object for each div
+    var divData = {};
+    var inputs = divs[i].querySelectorAll("[name]");
+    for (var j = 0; j < inputs.length; j++) {
+      if (inputs[j].type === "checkbox") {
+        divData[inputs[j].name] = inputs[j].checked;
+      } else {
+        divData[inputs[j].name] = inputs[j].value;
+      }
+    }
+    jsonData["page" + (i + 1)] = divData;
+  }
+  // Combine all the JSON objects into one large JSON object
+  var combinedJsonData = JSON.stringify(jsonData, null, 2);
+  // Send the JSON data to your server or do something else with it
+  console.log(combinedJsonData);
+}
  </script>
 	
 </body>
