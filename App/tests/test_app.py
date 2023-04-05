@@ -24,12 +24,12 @@ LOGGER = logging.getLogger(__name__)
 class UserUnitTests(unittest.TestCase):
 
     def test_new_user(self):
-        user = User("bob", "bobpass","bob@mail.com")
+        user = User("bob", "bobpass","bob@mail.com","Lecture",True)
         assert user.username == "bob"
 
     # pure function no side effects or integrations called
     def test_toJSON(self):
-        user = User("bob", "bobpass","bob@mail.com")
+        user = User("bob", "bobpass","bob@mail.com","Lecture",True)
         user_json = user.toJSON()
         self.assertDictEqual(user_json, {"id":None, "username":"bob","email":"bob@mail.com"})
     
@@ -59,8 +59,8 @@ def empty_db():
 
 
 def test_authenticate():
-    user = create_user("bob", "bobpass","bob@mail.com")
-    assert authenticate("bob", "bobpass") != None
+    user = create_user("bob", "bobpass","bob@mail.com","Lecture",True)
+    assert authenticate("bob", "bobpass","Lecture",True) != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
