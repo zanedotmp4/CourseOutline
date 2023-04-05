@@ -128,7 +128,19 @@
   <input type="radio" id="cc" name="coursetype" value="Co-curricular Course">
   <label for="cc">Co-curricular Course</label>
            <br> 
-             <br>   
+            <br> 
+             <label  style="font-weight: bold;">Select Course credits: </label>
+        <select name="courseCredits" id="cars">
+        <option value="1">1</option>
+            <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+        </select><br>
+
+          <br>
+           <br>
              
              <button type="button" class="next">Next</button>
     
@@ -323,12 +335,25 @@
   <input style="width:350px;" type="text" name="learningOutcome5" placeholder="Learning Outcome">
 <br>
               <br>
-           <p>Additional Learning Outcomes: </p>
-            <button onclick="addInput()">Click to Add more learning outcomes</button>
-           
-                  <div id="input-container">
 
-                  </div>
+              <p style="font-style:italic;">Learning Outcome 6:</p>
+              
+              <input style="width:350px;" type="text" name="learningOutcome6" placeholder="Learning Outcome">
+            <br>
+                          <br>
+
+                          <p style="font-style:italic;">Learning Outcome 7:</p>
+              
+                          <input style="width:350px;" type="text" name="learningOutcome7" placeholder="Learning Outcome">
+                        <br>
+                                      <br>
+
+                                      <p style="font-style:italic;">Learning Outcome 8:</p>
+              
+                                      <input style="width:350px;" type="text" name="learningOutcome8" placeholder="Learning Outcome">
+                                    <br>
+                                         
+     
                   <br>
            <br> 
                   <p style="font-weight: bold;"><label for="cr">2.) Course Content:</label></p>
@@ -409,7 +434,7 @@
         <p>This sections requires you to fill out details regardings the assessments for your proposed course. </p>
      <br>
      <p style="font-weight: bold;"><label for="cg">Course Assessments Description</label></p>
-              <textarea id="courseAssessmentDescription" name="course_g" rows="6" cols="50" placeholder="In paragraph form, write a brief description of the main assessment methods used in this course."></textarea>
+              <textarea id="courseAssessmentDescription" name="Course Assessment Desciption" rows="6" cols="50" placeholder="In paragraph form, write a brief description of the main assessment methods used in this course."></textarea>
               <br>
            <br>
            <h3>Course Assessments Table</h3>
@@ -659,25 +684,25 @@
         <h2>Attributes of the Ideal UWI Graduate</h2>
           <p>Please tick the ones that apply to this course:</p>
           <br>
-          <input type="checkbox" id="crit_thinker" name="attribute1" value="A critical and creative thinker">
+          <input type="checkbox" id="crit_thinker" name="A critical and creative thinker" value="A critical and creative thinker">
           <label for="crit_thinker">A critical and creative thinker</label><br>
 
-          <input type="checkbox" id="comm" name="attribute2" value="An effective communicator with good interpersonal skills">
+          <input type="checkbox" id="comm" name="An effective communicator with good interpersonal skills" value="An effective communicator with good interpersonal skills">
           <label for="comm">An effective communicator with good interpersonal skills</label><br>
 
-          <input type="checkbox" id="IT_literate" name="attribute3" value="IT-skilled and information literate">
+          <input type="checkbox" id="IT_literate" name="IT-skilled and information literate" value="IT-skilled and information literate">
           <label for="IT_literate">IT-skilled and information literate</label><br>
 
-          <input type="checkbox" id="inno" name="attribute4" value="Innovative and entrepreneurial">
+          <input type="checkbox" id="inno" name="Innovative and entrepreneurial" value="Innovative and entrepreneurial">
           <label for="inno">Innovative and entrepreneurial</label><br>
 
-          <input type="checkbox" id="global" name="attribute5" value="Globally aware and well-grounded in his/her regional identity">
+          <input type="checkbox" id="global" name="Globally aware and well-grounded in his/her regional identity" value="Globally aware and well-grounded in his/her regional identity">
           <label for="global">Globally aware and well-grounded in his/her regional identity</label><br>
         
-          <input type="checkbox" id="soc" name="attribute6" value="Socially, culturally and environmentally responsible">
+          <input type="checkbox" id="soc" name="Socially, culturally and environmentally responsible" value="Socially, culturally and environmentally responsible">
           <label for="soc">Socially, culturally and environmentally responsible</label><br>
         
-          <input type="checkbox" id="ethics" name="attribute7" value="Guided by strong ethical values">
+          <input type="checkbox" id="ethics" name="Guided by strong ethical values" value="Guided by strong ethical values">
           <label for="ethics">Guided by strong ethical values</label><br>        
           <br>  
           <button type="button" class="prev">Previous</button>
@@ -691,21 +716,21 @@
          <br>
          
            <p style="font-weight: bold;"><label for="required">Required/Essential:</label></p>
-           <textarea id="required" name="requiredResources" rows="6" cols="60" autofocus placeholder="Enter references for required reading in the faculty reference style (APA, MLA, AMA…).
+           <textarea id="required" name="Required Resources" rows="6" cols="60" autofocus placeholder="Enter references for required reading in the faculty reference style (APA, MLA, AMA…).
 
            "></textarea>
            <br>
                
            <p style="font-weight: bold;"><label for="recommend">Recommended:</label></p>
-           <textarea id="recommend" name="recommendedResources" rows="6" cols="60" autofocus placeholder="Enter recommended reading and resources in your faculty referencing style."></textarea>
+           <textarea id="recommend" name="Recommended Resources" rows="6" cols="60" autofocus placeholder="Enter recommended reading and resources in your faculty referencing style."></textarea>
            <br>
 
            <p style="font-weight: bold;"><label for="other">Other:(Special Equipment or Tools)</label></p>
-           <textarea id="other" name="otherResources" rows="6" cols="60" autofocus placeholder="Enter other resources (Special Equipment or Tools)"></textarea>
+           <textarea id="other" name="Other Resources" rows="6" cols="60" autofocus placeholder="Enter other resources (Special Equipment or Tools)"></textarea>
            <br>
 
            <p style="font-weight: bold;"><label for="staff">Staffing Requirements:</label></p>
-           <textarea id="staff" name="staffingRequirements" rows="6" cols="60" autofocus placeholder="Enter staffing requirements"></textarea>
+           <textarea id="staff" name="Staffing Requirements" rows="6" cols="60" autofocus placeholder="Enter staffing requirements"></textarea>
            <br>
            <button type="button" class="prev">Previous</button>
           <button type="button" class="next">Next</button>
@@ -843,7 +868,7 @@ function submitForm() {
   console.log(combinedJsonData);
 }
 */
-
+/*
 function submitForm() {
   // Loop through each div containing input fields
   var divs = document.querySelectorAll("div[id^='page']");
@@ -865,7 +890,38 @@ function submitForm() {
   var combinedJsonData = JSON.stringify(jsonData, null, 2);
   // Send the JSON data to your server or do something else with it
   console.log(combinedJsonData);
+} 
+*/
+
+function submitForm() {
+  // Loop through each div containing input fields
+  var divs = document.querySelectorAll("div[id^='page']");
+  var jsonData = {};
+  for (var i = 0; i < divs.length; i++) {
+    // Create a JSON object for each div
+    var divData = {};
+    var inputs = divs[i].querySelectorAll("[name]");
+    for (var j = 0; j < inputs.length; j++) {
+      if (inputs[j].type === "checkbox") {
+        divData[inputs[j].name] = inputs[j].checked;
+      } else if (inputs[j].value.trim() !== '') { // check if input value is not empty
+        divData[inputs[j].name] = inputs[j].value;
+      }
+    }
+    jsonData["page" + (i + 1)] = divData;
+  }
+  // Combine all the JSON objects into one large JSON object
+  var combinedJsonData = JSON.stringify(jsonData, null, 2);
+  // Send the JSON data to your server or do something else with it
+  console.log(combinedJsonData);
 }
+
+
+
+
+
+
+
  </script>
 	
 </body>
