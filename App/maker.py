@@ -1,5 +1,6 @@
 import random
 from docx import Document
+import docx
 import re
 import csv
 pattern_order = r'[0-9]'
@@ -190,8 +191,6 @@ def writeDoc(data):
         p  = document.add_paragraph()
         p.add_run('Course Aims').bold = True
         addParagraph(data1[i],document=document)
-    courseInfo.close()
-    with open('LearningOutcomes.txt') as courseInfo:
         partList = list(part4.items())
         line = []
         i=0
@@ -408,3 +407,4 @@ def writeDoc(data):
     files = ['even more testing.docx','TemplateFile.docx']
     document.save("even more testing.docx")
     combine_word_documents(files)
+
