@@ -406,5 +406,3 @@ def writeDoc(data):
     document.save("even more testing.docx")
     combine_word_documents(files)
 
-f = open('test.json')
-writeDoc(f)
