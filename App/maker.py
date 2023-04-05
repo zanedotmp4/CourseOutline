@@ -1,5 +1,6 @@
 import random
 from docx import Document
+import docx
 import re
 import csv
 pattern_order = r'[0-9]'
@@ -190,8 +191,6 @@ def writeDoc(data):
         p  = document.add_paragraph()
         p.add_run('Course Aims').bold = True
         addParagraph(data1[i],document=document)
-    courseInfo.close()
-    with open('LearningOutcomes.txt') as courseInfo:
         partList = list(part4.items())
         line = []
         i=0
@@ -288,16 +287,17 @@ def writeDoc(data):
         p.add_run('Assessment Description').bold = True
         addParagraph(value,document=document)
 
-    ## come 
         p = document.add_paragraph()
         p.add_run('Course Assessment Type and Course Learning Outcome Matrix').bold = True
         assignment = ['Assessment', 'Learning Outcomes' ,'Weighting% ','Assessment Description' ,'Duration']
         i=0
         learningOutcomesNum = len(part4)-2
         heading_text = assignment
+    
         for i in range(1,learningOutcomesNum+1):
             heading_text.append(str(i))
-        table1 = document.add_table(rows=len(assignment),cols=len(heading_text)-1,style='Table Grid')
+        rowlen = int((len(part6)-1)/5)
+        table1 = document.add_table(rows=rowlen+2,cols=len(heading_text)-1,style='Table Grid')
         header = table1.rows[0].cells
         numbers = table1.rows[1].cells
         j=0
@@ -326,21 +326,19 @@ def writeDoc(data):
         key,value = partList[k]
         last = 0
         j=0
-        parlen = 0
-        for i in range(2,int((len(partList)-1)/5)):
+        for i in range(0,int((len(partList)-1)/5)):
             j=0
             while j<len(assignment)-1:
                 if 'LearningOutcomes' in key:
                     for part in value:
                         if(part.isnumeric()):
-                            table1.cell(i,j+int(part)-1).text = 'X'
+                            table1.cell(i+2,j+int(part)-1).text = 'X'
                             last = int(part)
-                    print(last)
                     while table1.cell(0,j).text != 'Weighting% ':
                         j=j+1
                     j=j-1
                 else:
-                    table1.cell(i,j).text = value
+                    table1.cell(i+2,j).text = value
                 if k<len(partList)-1:
                     k=k+1
                 key ,value= partList[k]
@@ -389,7 +387,6 @@ def writeDoc(data):
         while key.find('Resources') !=-1:
             line = key+'-'+value +' \n'
             data2 = data2+line
-            print(data2)
             i=i+1
             key, value = partList[i]
         p = document.add_paragraph()
@@ -408,3 +405,6 @@ def writeDoc(data):
     files = ['even more testing.docx','TemplateFile.docx']
     document.save("even more testing.docx")
     combine_word_documents(files)
+
+f = open('test.json')
+writeDoc(f)
