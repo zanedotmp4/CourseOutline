@@ -65,12 +65,12 @@ def test_authenticate():
 class UsersIntegrationTests(unittest.TestCase):
 
     def test_create_user(self):
-        user = create_user("rick", "bobpass","bob@mail.com")
+        user = create_user("rick", "bobpass","bob@mail.com","Lecture",True)
         assert user.username == "rick"
 
     def test_get_all_users_json(self):
         users_json = get_all_users_json()
-        self.assertListEqual([{"id":1, "username":"bob","email":"bob@mail.com"}, {"id":2, "username":"rick","email":"bob@mail.com"}], users_json)
+        self.assertListEqual([{"id":1, "username":"bob","email":"bob@mail.com","type":"Lecture","isHOD":True}, {"id":2, "username":"rick","email":"bob@mail.com","type":"Lecture","isHOD":True}], users_json)
 
     # Tests data changes in the database
     def test_update_user(self):
