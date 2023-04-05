@@ -60,7 +60,7 @@ def empty_db():
 
 def test_authenticate():
     user = create_user("bob", "bobpass","bob@mail.com","Lecture",True)
-    assert authenticate("bob", "bobpass",,"bob@mail.com","Lecture",True) != None
+    assert authenticate("bob", "bobpass","bob@mail.com","Lecture",True) != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
