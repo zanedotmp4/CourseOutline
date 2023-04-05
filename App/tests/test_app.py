@@ -41,7 +41,7 @@ class UserUnitTests(unittest.TestCase):
 
     def test_check_password(self):
         password = "mypass"
-        user = User("bob", password,"bob@mail.com")
+        user = User(password,"bob@mail.com")
         assert user.check_password(password)
 
 '''
