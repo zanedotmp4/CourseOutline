@@ -9,7 +9,7 @@ class document(db.Model):
      resources = db.Column(db.Integer, db.ForeignKey('resources.id'), nullable=False)
      stratigies = db.Column(db.Integer, db.ForeignKey('teaching_stratigies.id'), nullable=False)
      templateID = db.Column(db.Integer, db.ForeignKey('template.id'), nullable=False)
-     calander = db.Column(db.Integer, db.ForeignKey('Calander.id'), nullable=False)
+     calander = db.Column(db.Integer, db.ForeignKey('calander.id'), nullable=False)
      name  = db.Column(db.String(120),nullable=False)
 
      def __init__(self,name):
