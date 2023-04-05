@@ -60,7 +60,7 @@ def empty_db():
 
 def test_authenticate():
     user = create_user("bob", "bobpass","bob@mail.com","Lecture",True)
-    assert authenticate("bob", "bobpass","Lecture",True) != None
+    assert authenticate("bob", "bobpass",,"bob@mail.com","Lecture",True) != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
@@ -70,7 +70,7 @@ class UsersIntegrationTests(unittest.TestCase):
 
     def test_get_all_users_json(self):
         users_json = get_all_users_json()
-        self.assertListEqual([{"id":1, "username":"bob","email":"bob@mail.com","type":"Lecture","isHOD":True}, {"id":2, "username":"rick","email":"bob@mail.com","type":"Lecture","isHOD":True}], users_json)
+        self.assertListEqual([{"id":1, "username":"bob","email":"bob@mail.com"}, {"id":2, "username":"rick","email":"bob@mail.com"}], users_json)
 
     # Tests data changes in the database
     def test_update_user(self):
