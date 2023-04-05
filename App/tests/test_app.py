@@ -36,7 +36,7 @@ class UserUnitTests(unittest.TestCase):
     def test_hashed_password(self):
         password = "mypass"
         hashed = generate_password_hash(password, method='sha256')
-        user = User("bob", password,"bob@mail.com")
+        user = User(password,"bob@mail.com")
         assert user.password != password
 
     def test_check_password(self):
@@ -59,13 +59,13 @@ def empty_db():
 
 
 def test_authenticate():
-    user = create_user("bobpass","bob@mail.com","Lecture",True)
-    assert authenticate("bobpass","bob@mail.com","Lecture",True) != None
+    user = create_user("bobpass","bob@mail.com","department",True)
+    assert authenticate("bobpass","bob@mail.com","department",True) != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
     def test_create_user(self):
-        user = create_user("bobpass","rick@mail.com","Lecture",True)
+        user = create_user("bobpass","rick@mail.com","department",True)
         assert user.email == "rick@mail.com"
 
     def test_get_all_users_json(self):
