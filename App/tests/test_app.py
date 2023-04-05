@@ -59,21 +59,16 @@ def empty_db():
 
 
 def test_authenticate():
-    user = create_user("bob", "bobpass","bob@mail.com","Lecture",True)
-    assert authenticate("bob", "bobpass","bob@mail.com","Lecture",True) != None
+    user = create_user("bobpass","bob@mail.com","Lecture",True)
+    assert authenticate("bobpass","bob@mail.com","Lecture",True) != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
     def test_create_user(self):
-        user = create_user("rick", "bobpass","bob@mail.com","Lecture",True)
-        assert user.username == "rick"
+        user = create_user("bobpass","rick@mail.com","Lecture",True)
+        assert user.email == "rick@mail.com"
 
     def test_get_all_users_json(self):
         users_json = get_all_users_json()
-        self.assertListEqual([{"id":1, "username":"bob","email":"bob@mail.com"}, {"id":2, "username":"rick","email":"bob@mail.com"}], users_json)
+        self.assertListEqual([{"id":1,"email":"bob@mail.com"}, {"id":2,"email":"rick@mail.com"}], users_json)
 
-    # Tests data changes in the database
-    def test_update_user(self):
-        update_user(1, "ronnie")
-        user = get_user(1)
-        assert user.username == "ronnie"
