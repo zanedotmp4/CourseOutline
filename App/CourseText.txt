@@ -1,0 +1,11 @@
+Campus and Faculty:
+School, Department, or Centre : 
+Course Code and Title:
+Semester and Level:
+Pre -requisites:
+Co-requisites:
+Anti-requisites:
+Course Type:
+Credits: 
+Mode of Delivery : 
+Proposed Start Date:
