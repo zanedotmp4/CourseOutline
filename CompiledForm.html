@@ -938,6 +938,19 @@ function submitForm() {
   var combinedJsonData = JSON.stringify(jsonData, null, 2);
   // Send the JSON data to your server or do something else with it
   console.log(combinedJsonData);
+
+  fetch('/App/views/form.py', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: combinedJsonData
+  })
+  .then(response => response.json())
+  .then(result => {
+    // Handle the response from the Python file
+  })
+  .catch(error => console.error(error));
 }
 
 
