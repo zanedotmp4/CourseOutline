@@ -20,6 +20,32 @@
             table, th, td {
      border: 1px solid darkblue;
      }
+
+     button.next {
+      background-color: rgb(14, 14, 195); /* Set the background color for next button */
+      color: black; 
+      padding: 10px 20px; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+    }
+
+    button.next:hover {
+      background-color: #091c99; /* Change the background color on hover for next button */
+    }
+
+    button.prev {
+        background-color: rgb(14, 14, 195); /* Set the background color for next button */
+        color: black; 
+        padding: 10px 20px; 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+      }
+  
+      button.prev:hover {
+        background-color: #091c99; /* Change the background color on hover for next button */
+      }
     </style>
 </head>
 <body>
@@ -82,7 +108,7 @@
 
     
 
- <!-- PAGE 1 --> 
+  <!-- PAGE 1 --> 
   <div class="page" id="page1">
     <h2>Initial Course Details</h2>
                         <p>Please entire the initial details required for your course</p>
@@ -92,15 +118,15 @@
 
             <label style="font-weight: bold;">Campus and Faculty: </label>
             <br>
-        <input type="text" id="cAndF" name="campusAndFaculty"  style="width: 300px;"><br>
+        <input type="text" id="cAndF" name="campusAndFaculty"  style="width: 300px;" required=" "><br>
               <br>
                     <label style="font-weight: bold;">School, Department or Centre: </label>
                     <br>
-                <input type="text" id="cAndF" name="schoolDepartmentCentre"  style="width: 300px;"><br>
+                <input type="text" id="cAndF" name="schoolDepartmentCentre"  style="width: 300px;" required=" "><br>
                <br>
                 <label style="font-weight: bold;">Course Code and Title: </label>
                 <br>
-            <input type="text" id="cAndF" name="courseCodeAndTitle"  style="width: 300px;"><br>
+            <input type="text" id="cAndF" name="courseCodeAndTitle"  style="width: 300px;" required=" "><br>
        <br>
             <label style="font-weight: bold;">Semester and Level: </label>
             <br>
@@ -108,17 +134,17 @@
                   <br>
                         <label for="pre" style="font-weight: bold;">Pre-requisites:</label>
                         <br>
-                <input type="text" id="Pre-Requisites" name="Pre-Requisites" placeholder="Enter All Pre-requisites or State ‘None’" style="width: 300px;"><br>
+                <input type="text" id="Pre-Requisites" name="Pre-Requisites" placeholder="Enter All Pre-requisites or State ‘None’" style="width: 300px;" required=" "><br>
                  <br>
 
             <label for="co" style="font-weight: bold;">Co-requisites:</label>
                   <br>
-                <input type="text" id="Co-requisites" name="Co-requisites" placeholder="Enter ALL Co-requisites or State ‘None’" style="width: 300px;"><br>
+                <input type="text" id="Co-requisites" name="Co-requisites" placeholder="Enter ALL Co-requisites or State ‘None’" style="width: 300px;" required=" "><br>
                  <br>
 
            <label for="anti" style="font-weight: bold;">Anti-requisites:</label>
                   <br>
-                <input type="text" id="Anti-requisites" name="Anti-requisites" placeholder="Enter ALL Anti-requisites or State ‘None’" style="width: 300px;"><br>
+                <input type="text" id="Anti-requisites" name="Anti-requisites" placeholder="Enter ALL Anti-requisites or State ‘None’" style="width: 300px;" required=" "><br>
                  <br>
                 <p style="font-weight: bold;">Select Course Type (Core, Elective, or Co-Curricular) </p>
   <input type="radio" id="core" name="coursetype" value="Core Course">
@@ -140,14 +166,14 @@
         </select><br>
 
           <br>
-           <br>
+           
              
-             <button type="button" class="next">Next</button>
+             <button type="submit" class="next">Next</button>
     
   </div>
 
   <!-- Page 2 -->
-  <div class="page" id="page2">
+  <div class="page" id="page2" style="display:none;">
 
     <h2>Course Credit Details</h2>
                         <p>Please enter the corresponding credits at each academic level for your intended course: </p>
@@ -248,17 +274,16 @@
           <option value="4">6</option>
         </select><br>
 
-   <br>
+   
 
    <button type="button" class="prev">Previous</button>
-   <br> 
-   <button type="button" class="next">Next</button>
-   <br>
+   <button type="submit" class="next">Next</button>
+   
    
   </div>
 
   <!--Page 3 --> 
-  <div class="page" id="page3">
+  <div class="page" id="page3" style="display:none;">
     <h2>About the course</h2>
     <p>This section requires you to fill out details about the content of the course</p>
     <br>
@@ -273,27 +298,26 @@
           <br> 
           <br>
           <p style="font-weight: bold;"><label for="psp">Proposed Start Date:</label></p>
-        <input type="date" name="proposedStartDate">
+        <input type="date" name="proposedStartDate" required=" ">
           <br>
           <br> 
           <p style="font-weight: bold;"><label for="cd">1.) Course Description:</label></p>
-      <textarea id="course_desc" name="Course Description" rows="6" cols="50" placeholder="Provide a brief description of the offering of this course, such as:  “This course introduces students to...It covers...It will be assessed using..."></textarea>
+      <textarea id="course_desc" name="Course Description" rows="6" cols="50" placeholder="Provide a brief description of the offering of this course, such as:  “This course introduces students to...It covers...It will be assessed using..." required=" "></textarea>
       <br>
           <br> 
         
           <p style="font-weight: bold;"><label for="cr">2.) Course Rationale:</label></p>
-      <textarea id="course_r" name="Course Rationale" rows="6" cols="50" placeholder="Provide a brief statement highlighting the dominant reasons for the offering of this course.  You should justify its addition and clearly state how it integrates into the overall degree programme."></textarea>
+      <textarea id="course_r" name="Course Rationale" rows="6" cols="50" placeholder="Provide a brief statement highlighting the dominant reasons for the offering of this course.  You should justify its addition and clearly state how it integrates into the overall degree programme." required=" "></textarea>
       <br>
       <br> 
            <p style="font-weight: bold;"><label for="cg">3.) Course Aims/Goals:</label></p>
-      <textarea id="course_g" name="Course Aims/Goals" rows="6" cols="50" placeholder="Enter the course aim/goal in a short paragraph. For example, “The primary aim/goal of the course is to….”"></textarea>
+      <textarea id="course_g" name="Course Aims/Goals" rows="6" cols="50" placeholder="Enter the course aim/goal in a short paragraph. For example, “The primary aim/goal of the course is to….”" required=" "></textarea>
       <br>
              
-                 <br>  
+                 
                  <button type="button" class="prev">Previous</button>
-                 <br> 
-                 <button type="button" class="next">Next</button>
-                <br>
+                 <button type="submit" class="next">Next</button>
+                
                 
     
    
@@ -301,7 +325,7 @@
 
     
   <!--PAGE 4-->
-  <div class="page" id="page4">
+  <div class="page" id="page4" style="display:none;">
     <h2>Learning Outcomes</h2>
             
     <br>
@@ -311,28 +335,27 @@
            <br>
            <p style="font-style:italic;">Learning Outcome 1:</p>
               
-  <input style="width:350px;" type="text" name="learningOutcome1" placeholder="Learning Outcome">
+  <input style="width:350px;" type="text" name="learningOutcome1" placeholder="Learning Outcome" required=" ">
 <br>
 <br>
            <p style="font-style:italic;">Learning Outcome 2:</p>
               
-  <input style="width:350px;" type="text" name="learningOutcome2" placeholder="Learning Outcome">
+  <input style="width:350px;" type="text" name="learningOutcome2" placeholder="Learning Outcome" required=" ">
 <br>
 <br>
            <p style="font-style:italic;">Learning Outcome 3:</p>
               
-  <input style="width:350px;" type="text" name="learningOutcome3" placeholder="Learning Outcome">
+  <input style="width:350px;" type="text" name="learningOutcome3" placeholder="Learning Outcome" required=" ">
 <br>
 <br>
            <p style="font-style:italic;">Learning Outcome 4:</p>
               
-  <input style="width:350px;" type="text" name="learningOutcome4" placeholder="Learning Outcome">
+  <input style="width:350px;" type="text" name="learningOutcome4" placeholder="Learning Outcome" required=" ">
 <br>
 <br>
-
            <p style="font-style:italic;">Learning Outcome 5:</p>
               
-  <input style="width:350px;" type="text" name="learningOutcome5" placeholder="Learning Outcome">
+  <input style="width:350px;" type="text" name="learningOutcome5" placeholder="Learning Outcome" required=" ">
 <br>
               <br>
 
@@ -357,23 +380,23 @@
                   <br>
            <br> 
                   <p style="font-weight: bold;"><label for="cr">2.) Course Content:</label></p>
-              <textarea id="course_r" name="courseContent" rows="6" cols="50" placeholder="Describe units, topics, concepts that will be addressed:"></textarea>
+              <textarea id="course_r" name="courseContent" rows="6" cols="50" placeholder="Describe units, topics, concepts that will be addressed:" required=" "></textarea>
               <br>
               <br> 
                 <br>
                    <p style="font-weight: bold;"><label for="cg">3.) Teaching Methods:</label></p>
-              <textarea id="course_g" name="teachingMethods" rows="6" cols="50" placeholder="Specify the combination of lectures, tutorials, labs, workshops or other types of interaction as appropriate. N.B. All types of interaction must be included."></textarea>
+              <textarea id="course_g" name="teachingMethods" rows="6" cols="50" placeholder="Specify the combination of lectures, tutorials, labs, workshops or other types of interaction as appropriate. N.B. All types of interaction must be included." required=" "></textarea>
               <br>
 
    
     <button type="button" class="prev">Previous</button>
-    <button type="button" class="next">Next</button>
+    <button type="submit" class="next">Next</button>
    
   </div>
 
 
   <!--Page 5-->
-    <div class="page" id="page5">
+    <div class="page" id="page5" style="display:none;">
         <h2>Contact Hours</h2>
         <p>This section requires you to fill out the contact hours required for your course. Please fill out using numerical values only.</p>
      <br>
@@ -389,9 +412,9 @@
         <tbody>
           <tr>
             <td><p style="font-style:italic">Lectures</p></td>
-            <td><input type="text" placeholder="duration" name="lectureDuration"></td>
-            <td><input type="text" placeholder="contact hours" name="lectureContactHours"></td>
-            <td><input type="text" placeholder="credit hours" name="lectureCreditHours"></td>
+            <td><input type="text" placeholder="duration" name="lectureDuration" required=" "></td>
+            <td><input type="text" placeholder="contact hours" name="lectureContactHours" required=" "></td>
+            <td><input type="text" placeholder="credit hours" name="lectureCreditHours" required=" "></td>
           </tr>
           <tr>
             <td><p style="font-style:italic">Tutorials</p></td>
@@ -413,9 +436,9 @@
           </tr>
           <tr>
             <td><p style="font-weight:bold;">Totals</p></td>
-            <td><input type="text" placeholder=" Total duration" name="totalDuration"></td>
-            <td><input type="text" placeholder="Total hours" name="totalContactHours"></td>
-            <td><input type="text" placeholder="total hours" name="totalCreditHours"></td>
+            <td><input type="text" placeholder=" Total duration" name="totalDuration" required=" "></td>
+            <td><input type="text" placeholder="Total hours" name="totalContactHours" required=" "></td>
+            <td><input type="text" placeholder="total hours" name="totalCreditHours" required=" "></td>
           </tr>
         </tbody>
       </table>
@@ -429,7 +452,7 @@
     </div>
 
     <!--Page6-->
-    <div class="page" id="page6">
+    <div class="page" id="page6" style="display:none;">
         <h2>Assessments Sections</h2>
         <p>This sections requires you to fill out details regardings the assessments for your proposed course. </p>
      <br>
@@ -540,7 +563,7 @@
     </div>
 
 <!--Page 7 -->
-    <div class="page" id="page7">
+    <div class="page" id="page7" style="display:none;">
         <h2>Course Calender</h2>
         <p>This section requires you to fill out the details with regards to the schedule of the assessments for your course</p>
         <br>
@@ -680,7 +703,7 @@
     </div>
 
 <!--Page8-->
-    <div class="page" id="page8">
+    <div class="page" id="page8" style="display:none;">
         <h2>Attributes of the Ideal UWI Graduate</h2>
           <p>Please tick the ones that apply to this course:</p>
           <br>
@@ -709,7 +732,8 @@
           <button type="button" class="next">Next</button>
     </div>
 
-    <div class="page" id="page9">
+  <!--Page9-->
+    <div class="page" id="page9" style="display:none;">
         <h1>Reading/Learning Resources</h1>
         <br>
         <p>Please enter the details regarding the academic resources required for your course </p>
@@ -718,19 +742,19 @@
            <p style="font-weight: bold;"><label for="required">Required/Essential:</label></p>
            <textarea id="required" name="Required Resources" rows="6" cols="60" autofocus placeholder="Enter references for required reading in the faculty reference style (APA, MLA, AMA…).
 
-           "></textarea>
+           " required=" "></textarea>
            <br>
                
            <p style="font-weight: bold;"><label for="recommend">Recommended:</label></p>
-           <textarea id="recommend" name="Recommended Resources" rows="6" cols="60" autofocus placeholder="Enter recommended reading and resources in your faculty referencing style."></textarea>
+           <textarea id="recommend" name="Recommended Resources" rows="6" cols="60" autofocus placeholder="Enter recommended reading and resources in your faculty referencing style." required=" "></textarea>
            <br>
 
            <p style="font-weight: bold;"><label for="other">Other:(Special Equipment or Tools)</label></p>
-           <textarea id="other" name="Other Resources" rows="6" cols="60" autofocus placeholder="Enter other resources (Special Equipment or Tools)"></textarea>
+           <textarea id="other" name="Other Resources" rows="6" cols="60" autofocus placeholder="Enter other resources (Special Equipment or Tools)" required=" "></textarea>
            <br>
 
            <p style="font-weight: bold;"><label for="staff">Staffing Requirements:</label></p>
-           <textarea id="staff" name="Staffing Requirements" rows="6" cols="60" autofocus placeholder="Enter staffing requirements"></textarea>
+           <textarea id="staff" name="Staffing Requirements" rows="6" cols="60" autofocus placeholder="Enter staffing requirements" required=" "></textarea>
            <br>
            <button type="button" class="prev">Previous</button>
           <button type="button" class="next">Next</button>
@@ -914,6 +938,19 @@ function submitForm() {
   var combinedJsonData = JSON.stringify(jsonData, null, 2);
   // Send the JSON data to your server or do something else with it
   console.log(combinedJsonData);
+
+  fetch('/App/views/form.py', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: combinedJsonData
+  })
+  .then(response => response.json())
+  .then(result => {
+    // Handle the response from the Python file
+  })
+  .catch(error => console.error(error));
 }
 
 
