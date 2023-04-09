@@ -11,6 +11,8 @@ class document(db.Model):
      templateID = db.Column(db.Integer, db.ForeignKey('template.id'), nullable=False)
      calander = db.Column(db.Integer, db.ForeignKey('calander.id'), nullable=False)
      name  = db.Column(db.String(120),nullable=False)
+     binary_data = db.Column(db.LargeBinary, nullable=False)
+
 
      def __init__(self,name):
           self.name = name
