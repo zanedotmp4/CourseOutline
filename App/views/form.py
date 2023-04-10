@@ -1,14 +1,9 @@
 from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
+from App.database import db
+from App.models import document
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///our_own.db'
-db = SQLAlchemy(app)
-
-class FormData(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.Text)
 
 @app.route('/App/views/form.py', methods=['POST'])
 def handle_form_data():
@@ -16,8 +11,8 @@ def handle_form_data():
     function_name = data.get('function_name')
   
     if function_name == "submitForm":
-        form_data = FormData(data=json.dumps(data))
-        db.session.add(form_data)
+        doc = document(binary_data=data)
+        db.session.add(doc)
         db.session.commit()
 
         return jsonify({'message': 'Data received successfully!'})
