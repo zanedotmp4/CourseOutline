@@ -6,7 +6,9 @@ from maker.py import *
 
 app = Flask(__name__)
 
-@app.route('/App/views/form', methods=['POST'])
+@app.route('/CompiledForm', methods=['POST'])
+def compiled_form():
+    return render_template('CompiledForm.html')
 def handle_form_data():
     data = request.get_json()
     function_name = data.get('function_name')
