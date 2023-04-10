@@ -11,11 +11,10 @@ def handle_form_data():
     function_name = data.get('function_name')
   
     if function_name == "submitForm":
-        doc = document(data=data)
+        doc = document(binary_data=data)
         db.session.add(doc)
         db.session.commit()
 
         return jsonify({'message': 'Data received successfully!'})
     else:
         return jsonify({'error': 'Invalid function name'})
-    
