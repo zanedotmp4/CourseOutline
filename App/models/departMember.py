@@ -7,7 +7,8 @@ class departmentMember(db.Model):
     isHod = db.Column(db.Boolean, default = False)
 
     def __init__(self,user_ID):
-        this.userID = user_ID
+        self.userID = user_ID
+
     def isHOD(self):
         return self.isHOD
     def assignHOD(self):
