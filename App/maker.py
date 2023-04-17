@@ -21,8 +21,6 @@ def combine_word_documents(files):
     
     change_orientation(merged_document)
     merged_document.save('merged.docx')
-    merged_document.save('merged.doc')
-    merged_document.save('text.bin')
 
 def change_orientation(document):
     for section in document.sections:
@@ -123,8 +121,6 @@ take out parts
 '''
 def writeDoc(data):
     document = Document()
-    
-    data = json.load(f)
     part1 = data['page1']
     part2 = data['page2']
     part3 = data['page3']
@@ -138,7 +134,7 @@ def writeDoc(data):
     i=0
     p = document.add_paragraph()
     p.add_run("THE UNIVERSITY OF THE WEST INDIES DRAFT \n PROPOSAL FOR NEW/REVISED UNDERGRADUATE COURSE").bold=True
-    with open('CourseText.txt') as courseInfo:
+    with open('App/CourseText.txt') as courseInfo:
         data1 = []
         line = courseInfo.readlines()
         for key in bigPart:
@@ -412,8 +408,8 @@ def writeDoc(data):
 
     ################################
     change_orientation(document)
-    document1 = Document('TemplateFile.docx')
+    document1 = Document('App/TemplateFile.docx')
     change_orientation(document1)
-    files = ['even more testing.docx','TemplateFile.docx']
+    files = ['even more testing.docx','App/TemplateFile.docx']
     document.save("even more testing.docx")
     combine_word_documents(files)

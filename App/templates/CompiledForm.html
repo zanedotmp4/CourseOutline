@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}Course Outline Generator {% endblock %}
+{% block page %}Course Outline Generator{% endblock %}
 
 {{ super() }}
 
@@ -50,8 +51,6 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="wrapper">
         <div class="row">
             <div class="col-sm-3">
                 <div id="sidebar"
@@ -107,9 +106,8 @@
                 </div>
             </div>
   
+            
   <div class="main_container">
-
-    
 
   <!-- PAGE 1 --> 
   <div class="page" id="page1">
@@ -162,10 +160,10 @@
         <select name="courseCredits" id="cars">
         <option value="1">1</option>
             <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="4">5</option>
-          <option value="4">6</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="4">5</option>
+            <option value="4">6</option>
         </select><br>
 
           <br>
@@ -480,11 +478,11 @@
     <!-- 10 rows -->
     <tr>
       <td>1</td>
-      <td><input name="assessment1" type="text"></td>
-      <td><input name="asLearningOutcomes1" type="text"></td>
-      <td><input name="asWeight1" type="text"></td>
-      <td><input name="asDesc1" type="text"></td>
-      <td><input name="asDuration1" type="text"></td>
+      <td><input name="assessment1" type="text" required=" "></td>
+      <td><input name="asLearningOutcomes1" type="text" required=" "></td>
+      <td><input name="asWeight1" type="text" required=" "></td>
+      <td><input name="asDesc1" type="text" required=" "></td>
+      <td><input name="asDuration1" type="text" required=" "></td>
     </tr>
     <tr>
       <td>2</td>
@@ -585,10 +583,10 @@
               <tr>
                 <td>1</td>
                 <td><input type="text" name="Topic1" placeholder="Topic"></td>
-                <td><input type="text" name="RequiredReadingLearningResources1" placeholder="Required Reading/Learning Resources"></td>
-                <td><input type="text" name="LearningActivities1" placeholder="Learning Activities"></td>
-                <td><input type="text" name="Assignments1" placeholder="Assignments"></td>
-                <td><input type="date" name="DueDate1" placeholder="Due Date"></td>
+                <td><input type="text" name="RequiredReadingLearningResources1" placeholder="Required Reading/Learning Resources" required=" "></td>
+                <td><input type="text" name="LearningActivities1" placeholder="Learning Activities" required=" "></td>
+                <td><input type="text" name="Assignments1" placeholder="Assignments" required=" "></td>
+                <td><input type="date" name="DueDate1" placeholder="Due Date" required=" "></td>
               </tr>
               <tr>
                 <td>2</td>
@@ -796,10 +794,14 @@
     </div>
    
 
-  </div>
 
-  </div>
-  <script>
+
+  {% endblock %}
+
+
+{% block page_scripts %}
+
+<script>
 
 var current_page = 1;
 var pages = document.querySelectorAll('.page');
@@ -845,6 +847,33 @@ function addInput() {
   input.style="width:350px;"
   container.appendChild(input);
 }
+
+function countLearningOutcomes() {
+  let numLearningOutcomes = 0;
+  for (let i = 1; i <= 8; i++) {
+    const outcome = document.getElementsByName(`learningOutcome${i}`)[0].value;
+    if (outcome.trim() !== "") {
+      numLearningOutcomes++;
+    }
+  }
+  return numLearningOutcomes;
+}
+
+
+const asLearningOutcomesFields = document.querySelectorAll('input[name^="asLearningOutcomes"]');
+
+function validateAsLearningOutcomes() {
+  const numLearningOutcomes = countLearningOutcomes(); 
+  const inputVal = this.value.trim();
+  const inputArr = inputVal.split(',').filter(val => val !== '');
+  const isInvalid = inputArr.some(val => Number(val) > numLearningOutcomes);
+  if (isInvalid) {
+    alert(`Invalid input. Please enter a number between 1 and ${numLearningOutcomes}.`);
+    this.value = ''; 
+  }
+}
+
+asLearningOutcomesFields.forEach(field => field.addEventListener('blur', validateAsLearningOutcomes));
 
 /*function submitForm() {
   const form = document.getElementById('myForm1');
