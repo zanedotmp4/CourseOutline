@@ -51,7 +51,7 @@ class UserUnitTests(unittest.TestCase):
 @pytest.fixture(autouse=True, scope="module")
 def empty_db():
     app = create_app({'TESTING': True, 'SQLALCHEMY_DATABASE_URI': 'sqlite:///test.db'})
-    create_db()
+    create_db(app=app)
     yield app.test_client()
     db.drop_all()
 
