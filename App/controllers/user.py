@@ -5,18 +5,18 @@ def create_user(password,email,type,isHOD):
     if(type=="department"):
         user = User(password=password,email=email)
         user.setType(type)
-        newuser = departMember(password=password,email=email)
+        newuser = departMember()
         if(isHOD==True):
             newuser.assignHOD()
     if(type=="CELT"):
         user = User(password=password,email=email)
         user.setType(type)
-        newuser = CELTmember(password=password,email=email)
+        newuser = CELTmember()
 
     db.session.add(user)
     db.session.add(newuser)
     db.session.commit()
-    return newuser
+    return user
 
 def get_user_by_username(username):
     return User.query.filter_by(username=username).first()
