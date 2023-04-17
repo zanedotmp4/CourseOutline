@@ -6,8 +6,8 @@ class CELTMember(db.Model):
     document = db.Column(db.Integer, db.ForeignKey('template.id'), nullable=False)
 
     def __init__(self,user_ID):
-        this.userID = user_ID
-        
+        self.userID = user_ID
+
     def toJSON(self):
         return{
             'userID':self.userID,
