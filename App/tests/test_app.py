@@ -57,13 +57,13 @@ def empty_db():
 
 
 def test_authenticate():
-    user = create_user("bobpass", "bob@mail.com","depatrment",True)
+    user = create_user("bobpass", "bob@mail.com","department",True)
     assert login("bob", "bobpass") != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
     def test_create_user(self):
-        user = create_user("bobpass", "rick@mail.com","depatrment",True)
+        user = create_user("bobpass", "rick@mail.com","department",True)
         assert user.email == "rick@mail.com"
 
     def test_get_all_users_json(self):
@@ -74,4 +74,4 @@ class UsersIntegrationTests(unittest.TestCase):
     def test_update_user(self):
         update_user(1, "ronnie@mail.com")
         user = get_user(1)
-        assert user.email == "ronnie"
+        assert user.email == "ronnie@mail.com"
