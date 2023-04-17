@@ -7,7 +7,7 @@ def create_user(password,email,type,isHOD):
         user.setType(type)
         newuser = departMember(user.getID())
         if(isHOD==True):
-            newuser.assignHOD()
+            .assignHOD()
     if(type=="CELT"):
         user.setType(type)
         newuser = CELTmember(user.getID())

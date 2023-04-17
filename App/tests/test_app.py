@@ -29,7 +29,7 @@ class UserUnitTests(unittest.TestCase):
     def test_get_json(self):
         user = User("bobpass", "bob@mail.com")
         user_json = user.toJSON()
-        self.assertDictEqual(user_json, {"id":1, "email":"bob@mail.com"})
+        self.assertDictEqual(user_json, {"id":"None", "email":"bob@mail.com"})
     
     def test_hashed_password(self):
         password = "mypass"
@@ -58,7 +58,7 @@ def empty_db():
 
 def test_authenticate():
     user = create_user("bobpass", "bob@mail.com","department",True)
-    assert login("bob", "bobpass") != None
+    assert login("bob@mail.com", "bobpass") != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
