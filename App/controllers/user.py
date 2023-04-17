@@ -5,12 +5,12 @@ def create_user(password,email,type,isHOD):
     user = User(password=password,email=email)
     if(type=="department"):
         user.setType(type)
-        newuser = departMember(user.getID())
+        newuser = departMember(user_ID=user.getID())
         if(isHOD==True):
             newuser.assignHOD()
     if(type=="CELT"):
         user.setType(type)
-        newuser = CELTmember(user.getID())
+        newuser = CELTmember(user_ID=user.getID())
 
     db.session.add(user)
     db.session.add(newuser)
