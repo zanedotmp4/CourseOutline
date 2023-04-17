@@ -27,7 +27,7 @@ class UserUnitTests(unittest.TestCase):
 
     # pure function no side effects or integrations called
     def test_get_json(self):
-        user = UserUser("bobpass", "bob@mail.com")
+        user = User("bobpass", "bob@mail.com")
         user_json = user.get_json()
         self.assertDictEqual(user_json, {"id":None, "email":"bob@mail.com"})
     
