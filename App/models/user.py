@@ -12,7 +12,7 @@ class User(db.Model):
         self.set_password(password)
     
     def getID(self):
-        return id
+        return self.id
     def toJSON(self):
         return{
             'id': self.id,
