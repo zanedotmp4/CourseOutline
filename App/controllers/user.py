@@ -2,14 +2,13 @@ from App.models import User,departMember,CELTmember
 from App.database import db
 
 def create_user(password,email,type,isHOD):
+    user = User(password=password,email=email)
     if(type=="department"):
-        user = User(password=password,email=email)
         user.setType(type)
         newuser = departMember()
         if(isHOD==True):
             newuser.assignHOD()
     if(type=="CELT"):
-        user = User(password=password,email=email)
         user.setType(type)
         newuser = CELTmember()
 
