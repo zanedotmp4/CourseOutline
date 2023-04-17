@@ -10,7 +10,9 @@ class User(db.Model):
     def __init__(self,password,email):
         self.email = email
         self.set_password(password)
-
+    
+    def getID(self):
+        return id
     def toJSON(self):
         return{
             'id': self.id,
