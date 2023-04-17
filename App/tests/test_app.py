@@ -72,6 +72,6 @@ class UsersIntegrationTests(unittest.TestCase):
 
     # Tests data changes in the database
     def test_update_user(self):
-        update_user(1, "ronnie")
+        update_user(1, "ronnie@mail.com")
         user = get_user(1)
-        assert user.username == "ronnie"
+        assert user.email == "ronnie"

@@ -3,12 +3,17 @@ from App.database import db
 
 def create_user(password,email,type,isHOD):
     if(type=="department"):
+        user = User(password=password,email=email)
+        user.setType(type)
         newuser = departMember(password=password,email=email)
         if(isHOD==True):
             newuser.assignHOD()
     if(type=="CELT"):
+        user = User(password=password,email=email)
+        user.setType(type)
         newuser = CELTmember(password=password,email=email)
 
+    db.session.add(user)
     db.session.add(newuser)
     db.session.commit()
     return newuser
