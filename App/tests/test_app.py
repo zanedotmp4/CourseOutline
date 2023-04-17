@@ -3,7 +3,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from App.main import create_app
 from App.database import db, create_db
-from App.models import User
+from App.models import *
 from App.controllers import (
     create_user,
     get_all_users_json,
@@ -29,7 +29,7 @@ class UserUnitTests(unittest.TestCase):
     def test_get_json(self):
         user = User("bobpass", "bob@mail.com")
         user_json = user.toJSON()
-        self.assertDictEqual(user_json, {"id":1, "email":"bob@mail.com"})
+        self.assertDictEqual(user_json, {"id":None, "email":"bob@mail.com"})
     
     def test_hashed_password(self):
         password = "mypass"
@@ -57,18 +57,18 @@ def empty_db():
 
 
 def test_authenticate():
-    user = create_user("bobpass", "bob@mail.com","department",True)
-    assert login("bob", "bobpass") != None
+    user = create_user("bobpass", "bob@mail.com")
+    assert login("bob@mail.com", "bobpass") != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
     def test_create_user(self):
-        user = create_user("bobpass", "rick@mail.com","department",True)
+        user = create_user("bobpass1", "rick@mail.com")
         assert user.email == "rick@mail.com"
 
     def test_get_all_users_json(self):
         users_json = get_all_users_json()
-        self.assertListEqual([{"id":1, "email":"bob@mail.com"}, {"id":2, "email":"rick@mail.com"}], users_json)
+        self.assertListEqual([{"id":1, "email":"bob@mail.com"},{"id":2,"email":"rick@mail.com"}], users_json)
 
     # Tests data changes in the database
     def test_update_user(self):

@@ -6,6 +6,9 @@ class departmentMember(db.Model):
     documentID = db.Column(db.Integer, db.ForeignKey('document.id'), nullable=False)
     isHod = db.Column(db.Boolean, default = False)
 
+    def __init__(self,user_ID):
+        self.userID = user_ID
+
     def isHOD(self):
         return self.isHOD
     def assignHOD(self):

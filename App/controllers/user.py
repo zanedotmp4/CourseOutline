@@ -1,19 +1,9 @@
 from App.models import User,departMember,CELTmember
 from App.database import db
 
-def create_user(password,email,type,isHOD):
+def create_user(password,email):
     user = User(password=password,email=email)
-    if(type=="department"):
-        user.setType(type)
-        newuser = departMember()
-        if(isHOD==True):
-            newuser.assignHOD()
-    if(type=="CELT"):
-        user.setType(type)
-        newuser = CELTmember()
-
     db.session.add(user)
-    db.session.add(newuser)
     db.session.commit()
     return user
 
