@@ -1,6 +1,6 @@
 from App.models import template
 from App.database import db
-def create_ResourcesTemp(text):
+def create_Temp(text):
     Template = template(text=text)
     db.session.add(Template)
     db.session.commit()
